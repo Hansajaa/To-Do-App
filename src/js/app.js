@@ -14,9 +14,15 @@ txtTask.onkeyup = () => {
 addBtn.addEventListener("click", function () {
   if (txtTask.value != "") {
     let li = document.createElement("li");
+    let btn = document.createElement('button');
+    btn.textContent = "Done";
     li.textContent = txtTask.value;
+    li.appendChild(btn);
 
     todoList.appendChild(li);
+
     txtTask.value = "";
+  }else{
+    warningText.innerHTML = "* Required";
   }
 });
